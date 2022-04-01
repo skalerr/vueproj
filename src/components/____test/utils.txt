@@ -1,0 +1,6 @@
+https://mdbootstrap.com/docs/standard/forms/range/#sidenav-collapse-1-0-0
+https://vuetifyjs.com/en/components/sliders/#disabled
+https://vuetifyjs.com/en/components/sliders/#thumb
+https://athemes.com/collections/vue-ui-component-libraries/
+https://buefy.org/documentation/slider/
+https://tailwindcss.com/docs/appearance

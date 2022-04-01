@@ -1,0 +1,92 @@
+<div
+  class="calculator-row initialized"
+  data-rules='{"summ_title":"Какая сумма вам необходима?","summ_from":"5000","days_title":"На какой срок?","days_from":"15",
+  "summ":[{"from":"1000","to":"50000","step":"1000"}],
+  "days":[{"from":"1","to":"30","step":"day"},{"from":"31","to":"150","step":"month"}],"limit_type":"minmax","do_action":"calculate",
+  "percent_rules":[{"days_from":"1","days_to":"30","percent_per_day":"0.01","payment_every":"1day","show_info":["return_summ","return_date"]},{"days_from":"31","days_to":"60","percent_per_day":"0.008","payment_every":"30days","show_info":["return_date","return_frequency"]},{"days_from":"61","days_to":"90","percent_per_day":"0.0079","payment_every":"30days","show_info":["return_date","return_frequency"]},{"days_from":"91","days_to":"120","percent_per_day":"0.0078","payment_every":"30days","show_info":["return_date","return_frequency"]},{"days_from":"121","days_to":"150","percent_per_day":"0.0077","payment_every":"30days","show_info":["return_date","return_frequency"]}],"info_title":"Расчет займа","btn_text":"Оформить заявку","popup_title":"Оставьте заявку","popup_text":"и мы подберем самый выгодный тариф для вас","id":"313","check":0}'
+>
+  <div class="calculator-selectors has-2">
+    <div class="calculator-selector">
+      <div class="calculator-selector-title">Какая сумма вам необходима?</div>
+      <div class="calculator-selector-value"><span data-selector="summ">5 000 руб</span></div>
+      <div class="calculator-selector-slider">
+        <span class="irs irs--kassa js-irs-0"
+          ><span class="irs"
+            ><span class="irs-line" tabindex="0"></span><span class="irs-min">1 000 руб</span
+            ><span class="irs-max">50 000 руб</span
+            ><span class="irs-from" style="visibility: hidden; display: none">0</span
+            ><span class="irs-to" style="visibility: hidden; display: none">0</span
+            ><span class="irs-single" style="display: none; left: 0%">0</span></span
+          ><span class="irs-grid"></span
+          ><span class="irs-bar irs-bar--single" style="left: 0px; width: 10.5313%"></span
+          ><span class="irs-shadow shadow-single" style="display: none"></span
+          ><span class="irs-handle single" style="left: 7.70121%"><i></i><i></i><i></i></span></span
+        ><input
+          class="calculator-irs irs-hidden-input"
+          name="summ"
+          data-min="1000"
+          data-max="50000"
+          data-from="5000"
+          data-step="1"
+          tabindex="-1"
+          readonly=""
+        />
+      </div>
+    </div>
+    <div class="calculator-selector">
+      <div class="calculator-selector-title">На какой срок?</div>
+      <div class="calculator-selector-value"><span data-selector="days">15 дней</span></div>
+      <div class="calculator-selector-slider">
+        <span class="irs irs--kassa js-irs-1"
+          ><span class="irs"
+            ><span class="irs-line" tabindex="0"></span><span class="irs-min">1 день</span
+            ><span class="irs-max">5 месяцев</span
+            ><span class="irs-from" style="visibility: hidden; display: none">0</span
+            ><span class="irs-to" style="visibility: hidden; display: none">0</span
+            ><span class="irs-single" style="display: none; left: 0%">0</span></span
+          ><span class="irs-grid"></span
+          ><span class="irs-bar irs-bar--single" style="left: 0px; width: 11.6942%"></span
+          ><span class="irs-shadow shadow-single" style="display: none"></span
+          ><span class="irs-handle single" style="left: 8.86414%"><i></i><i></i><i></i></span></span
+        ><input
+          class="calculator-irs irs-hidden-input"
+          name="days"
+          data-min="1"
+          data-max="150"
+          data-from="15"
+          data-step="1"
+          tabindex="-1"
+          readonly=""
+        />
+      </div>
+    </div>
+  </div>
+  <div class="calculator-info calculator-action-calculate" name="bid">
+    <div class="calculator-info-title">Расчет займа</div>
+    <div class="calculator-info-rows">
+      <div class="calculator-info-row">
+        <div class="calculator-info-label">Срок до</div>
+        <div class="calculator-info-value" data-info="return_date">11 марта</div>
+      </div>
+      <div class="calculator-info-row">
+        <div class="calculator-info-label">К возврату</div>
+        <div class="calculator-info-value" data-info="return_summ">5 750 руб</div>
+      </div>
+      <div class="calculator-info-row hidden">
+        <div class="calculator-info-label">
+          Платеж <span data-info="return_frequency_label">в конце срока</span>
+        </div>
+        <div class="calculator-info-value" data-info="return_frequency">384 руб</div>
+      </div>
+    </div>
+    <div class="calculator-info-text hidden"></div>
+    <div class="calculator-info-button">
+      <span
+        class="btn btn-green btn-full-width btn-calculator-popup"
+        data-popup-title="Оставьте заявку"
+        data-popup-text="и мы подберем самый выгодный тариф для вас"
+        >Оформить заявку</span
+      >
+    </div>
+  </div>
+</div>

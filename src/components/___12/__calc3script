@@ -1,0 +1,26 @@
+ <!-- <p>all {{ totalsum() }} рублей</p> -->
+                          <!-- <p v-if="Price >= 1000">
+                            Итого {{ Math.round((totalsum() / 10000) * 10000) }} рублей
+                          </p>
+
+                          <p v-else-if="Price < 1000">
+                            Итого
+                            {{
+                              Math.round(
+                                minPrice *
+                                  Math.pow(this.percentDay + this.percentDay / this.a, this.day)
+                              )
+                            }}
+                            рублей
+                          </p> -->
+                          <!-- <p>
+                            Итого рублей
+                            {{
+                              Price >= 1000
+                                ? Math.round(totalsum() / 10) * 10
+                                : Math.round(
+                                    minPrice *
+                                      Math.pow(this.percentDay + this.percentDay / this.a, this.day)
+                                  )
+                            }}
+                          </p> -->

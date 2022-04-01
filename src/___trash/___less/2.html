@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Изучаем Vue 3</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div id="app">
+      <p><input type="text" v-model="company" /></p>
+      <ul>
+        <li v-for="phone in filteredList">
+          <p>{{ phone.title }} - {{ phone.company }}</p>
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            company: "",
+            phones: [
+              { title: "iPhone 12", company: "Apple" },
+              { title: "iPhone 10", company: "Apple" },
+              { title: "Galaxy S20", company: "Samsung" },
+              { title: "Galaxy A10", company: "Samsung" },
+              { title: "Xiaomi Redmi 8", company: "Xiaomi" },
+            ],
+          }
+        },
+        computed: {
+          filteredList() {
+            let comp = this.company
+            return this.phones.filter(function (elem) {
+              if (comp === "") return true
+              //   else return elem.company.indexOf(comp) > -1
+              //   else return elem.company.indexOf(comp) > -1
+              else return elem.company.toLowerCase().indexOf(comp.toLowerCase()) > -1
+            })
+          },
+        },
+      }).mount("#app")
+    </script>
+  </body>
+</html>

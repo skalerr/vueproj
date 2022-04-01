@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Компоненты Vue 3</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="name" /><br /><br />
+      <input type="number" v-model.number="age" /><br /><br />
+      <user :name="name" :age="age"></user>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return { name: "", age: 18 }
+        },
+      })
+
+      app.component("user", {
+        props: ["name", "age"],
+        template: "<div><h2>User</h2><p>Name: {{name}}</p><p>Age: {{age}}</p></div>",
+      })
+      app.mount("#app")
+    </script>
+  </body>
+</html>

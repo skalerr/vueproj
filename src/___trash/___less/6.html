@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Компоненты Vue 3</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div id="app">
+      <h2>Список пользователей</h2>
+      <userform :addfn="add" :changefn="change"></userform>
+      <div>
+        <useritem
+          v-for="(user, index) in users"
+          :user="user"
+          :key="index"
+          :index="index"
+          :removefn="remove"
+          :changefn="change"
+        >
+        </useritem>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            users: [
+              { name: "Tom", age: 23 },
+              { name: "Bob", age: 26 },
+              { name: "Alice", age: 28 },
+            ],
+            user: {},
+            visible: true,
+          }
+        },
+        methods: {
+          remove(index) {
+            this.users.splice(index, 1)
+          },
+          add(user) {
+            this.users.push(user)
+          },
+          change(index) {
+            this.user = this.users[index]
+          },
+        },
+      })
+
+      app.component("userform", {
+        props: ["addfn", "changefn"],
+        data() {
+          return {
+            user: { name: "", age: 18 },
+          }
+        },
+        template: `<div>
+                    <input type="text" v-model="user.name" />
+                    <input type="number" v-model="user.age" />
+                    <button  v-on:click="addfn({name:user.name, age: user.age})">Add</button>
+                </div>`,
+      })
+      app.component("useritem", {
+        props: ["user", "index", "removefn", "changefn"],
+        template: `<div>
+                    <p>Name: {{user.name}} <br> Age: {{user.age}}</p>
+                    <button  v-on:click="removefn(index)">Delete</button>
+                    <button  v-on:click="changefn(index)">Change</button>
+                </div>`,
+      })
+      app.component("useredit", {
+        props: ["user"],
+        template: `<div>
+                      <input v-if="visible" type="text" v-model="user.name" />
+                      <input v-if="visible" type="number" v-model="user.age" />
+                  </div>`,
+      })
+      app.mount("#app")
+    </script>
+  </body>
+</html>

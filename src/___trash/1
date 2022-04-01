@@ -1,0 +1,63 @@
+    <div class="container-md" style="height: 1000px">
+      <div class="row">
+        <div class="d-md-flex justify-content-around">
+          <div class="range-slider col">
+            <div class="col d-flex justify-content-between">
+              <p class="d-flex justify-content-between flex-grow-1">
+                <span class="border opop">1000</span>
+                <span class="border">30000</span>
+              </p>
+            </div>
+
+            <!-- <table class="text">
+              <tr>
+                <td>Текст слева</td>
+                <td class="rightcol">Текст справа</td>
+              </tr>
+            </table> -->
+            <div class="range_container">
+              <input
+                class="ranger"
+                type="range"
+                min="1000"
+                max="30000"
+                step="1000"
+                v-model="Price"
+                v-on:change="notUse"
+              />
+            </div>
+            <div class="d-flex justify-content-start ps-3 pt-2">
+              <input :value="Price" />
+            </div>
+            <input :value="Price" @input="$emit('update:Price', $event.target.value)" />
+            <br />
+            <div class="range_container">
+              <input
+                class="ranger"
+                type="range"
+                min="1"
+                max="30"
+                step="1"
+                v-model="day"
+                v-on:change="notUse"
+              />
+            </div>
+            <div class="col d-flex justify-content-between">
+              <p class="d-flex justify-content-between flex-grow-1">
+                <span class="border">1 день</span>
+                <span class="border">30 дней</span>
+              </p>
+            </div>
+            <div class="d-flex justify-content-start ps-3 pt-1">
+              <input :value="day" @input="$emit('update:Price', $event.target.value)" />
+            </div>
+          </div>
+          <div class="range-values col-4">
+            <p>Сумма: {{ Price }} рублей</p>
+            <p>На какое количество дней: {{ day }} дней</p>
+            <p>Процент который нужно будет оплатить {{ outputPercent() }} рублей {{}}</p>
+            <p>Итого {{}} {{ outputall() }} рублей</p>
+          </div>
+        </div>
+      </div>
+    </div>

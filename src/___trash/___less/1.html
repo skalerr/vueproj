@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Изучаем Vue 3</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div id="app">
+      <input v-model="start" type="number" />
+      <input v-model="end" type="number" />
+      <ul>
+        <li v-for="phone in visibleList">
+          <p>{{ phone }}</p>
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            start: 0,
+            end: 3,
+            phones: ["iPhone 12", "Galaxy S20", "Nokia N9", "Xiaomi Mi10"],
+          }
+        },
+        computed: {
+          visibleList() {
+            return this.phones.slice(this.start, this.end)
+          },
+        },
+      }).mount("#app")
+    </script>
+  </body>
+</html>

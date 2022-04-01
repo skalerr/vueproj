@@ -1,0 +1,15 @@
+// отказываюсь от vue3 slider не работает ползунок если степ >= 1000
+@input="$emit('update:Price', $event.target.value)"
+emits: ["update:Price"],
+    click: null,
+
+    value: ({ Price }) => {
+      if (this.Price < 90 || this.Price < 900 ) {
+        return Math.round(this.Price / 1000) * 1000
+      } else {
+        console.warn("Некорректные данные для генерации события submit!")
+        return false
+      }
+    },
+    submitForm(Price) {
+      this.$emit('value', { email, password })
