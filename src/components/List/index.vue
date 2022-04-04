@@ -25,7 +25,6 @@
               <td>{{ user.inputemail }}</td>
               <td>{{ user.vmodelsumm }}</td>
               <td>{{ user.vmodelday }}</td>
-
               <td>{{ user.datenow }}</td>
             </tr>
             <!-- <tr>
@@ -110,9 +109,10 @@ export default {
         .then((Response) => {
           console.log("responseType");
           console.log(Response);
-          console.log("responsedata");
 
+          console.log("responsedata");
           console.log(Response.data);
+
           // if (Response.data.legth)
           this.users = Response.data;
           // this.users = Object.assign({}, this.obj);

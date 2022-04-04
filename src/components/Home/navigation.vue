@@ -1,7 +1,8 @@
 <template>
   <nav class="sticky-top navbar navbar-expand-xl navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Калькулятор займов</a>
+      <!-- <a class="" href="#"></a> -->
+      <router-link class="navbar-brand" to="/">Калькулятор займов</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -21,7 +22,7 @@
           </li>
           <li class="nav-item">
             <!-- <a class="nav-link" href="#">О нас</a> -->
-            <router-link class="nav-link" to="/list">LIst Of zaims</router-link>
+            <router-link class="nav-link" to="/list">List Of loan</router-link>
           </li>
           <!-- выпадающий список -->
           <li class="nav-item dropdown">

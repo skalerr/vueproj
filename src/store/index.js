@@ -10,16 +10,6 @@ export default createStore({
     settings: {},
     // певрым массив с настройками (1)
   },
-  mutations: {
-    // (3)
-    // не забывать синтаксис :
-    // первый агрумент стейт
-    // вторым аргументом проносим настройки
-    SET_SETTINGS_TO_STATE: (state, settings) => {
-      // задаем имя
-      state.settings = settings;
-    },
-  },
   actions: {
     // (2)
     GET_SETTINGS_FROM_API({ commit }) {
@@ -58,6 +48,17 @@ export default createStore({
     //   })
     // },
   },
+  mutations: {
+    // (3)
+    // не забывать синтаксис :
+    // первый агрумент стейт
+    // вторым аргументом проносим настройки
+    SET_SETTINGS_TO_STATE: (state, settings) => {
+      // задаем имя
+      state.settings = settings;
+    },
+  },
+
   getters: {
     SETTINGS(state) {
       return state.settings;

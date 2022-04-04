@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace rpg2.Models
 {
@@ -10,7 +11,8 @@ namespace rpg2.Models
     {
         [Key]
         public int? Id {get; set; }
-        public string? requestnumber {get; set; }
+    [JsonProperty("requestnumber")]
+        public string? RequestNumber {get; set; }
         public string? inputtel { get; set; }
 
         public string? inputname { get; set; }

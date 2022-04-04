@@ -445,16 +445,9 @@ export default {
 
   methods: {
     modalwindow() {
-      // eslint-disable-next-line no-unused-vars
-      // var modalexl = document.getElementById("takesumm");
-      // var modal = new bootstrap.Modal(modalexl);
-      // this.someModal = new bootstrap.Modal(document.getElementById("takesumm"));
-      // this.someModal.show();
-      this.someModal.toggle();
+      this.someModal = new bootstrap.Modal(document.getElementById("takesumm"));
 
-      // this.someModal.dispose();
-      // myModal.toggle();
-      // myModal.dispose();
+      this.someModal.toggle();
     },
     onclickbtn() {
       // var toastTrigger = document.getElementById("liveToastBtn");
@@ -467,14 +460,15 @@ export default {
       // Array.from(document.querySelectorAll(".toast")).forEach((toastNode) => new Toast(toastNode));
     },
     onclick() {
-      this.$store.dispatch("setToast", true);
+      this.setToast(true);
+      // this.$store.dispatch("setToast", true);
       const toast = new Toast(this.$refs.toast);
 
       toast.show();
-
-      this.$store.dispatch("setToast", false);
+      this.setToast(false);
+      // this.$store.dispatch("setToast", false);
     },
-    ...mapActions(["GET_SETTINGS_FROM_API"]),
+    ...mapActions(["GET_SETTINGS_FROM_API", "setToast"]),
 
     alertjs() {
       alert("mem");
@@ -643,10 +637,6 @@ export default {
           alert(error);
           console.log(error);
           console.log("ошибка senddatafrommodal");
-          // alert(error);
-          // alert("ошибка senddatafrommodal");
-          // alert(Response.data);
-          // return error;
         });
 
       //   fetch(BASE_URL + GET_USERS, {
@@ -731,19 +721,6 @@ export default {
           ) + this.minPrice
         );
     },
-    // fullname: {
-    //   get: function () {
-    //     return this.firstname + " " + this.lastname
-    //   },
-    //   set: function (newValue) {
-    //     const names = newValue.split(" ")
-    //     this.firstname = names[0]
-    //     this.lastname = names[names.length - 1]
-    //     console.log(names.length, names)
-    //   },
-    // },
-
-    // avgPriceComputed:
   },
 
   emits: {
@@ -762,10 +739,6 @@ export default {
     toastState(newT, oldT) {
       if (newT) this.onclick();
     },
-    // Price() {
-    //   this.Priceround()
-    // },
-
     // вочеры на изменение поля цены и дня
     Price() {
       if (this.Price < 90 || this.Price < 900) {

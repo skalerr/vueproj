@@ -1,31 +1,33 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace rpg2.Models
 {
-   public class Settings
-{
-     public int? Id {get; set; } = 0;
+    public class Settings
+    {
+        [Key]
+        public int Id { get; set; }
 
-    public int? Summ { get; set; } = 0;
+      [JsonPropertyName("summ")]
 
-  
-    public decimal? Day { get; set; } = 0;
+        public int? Summ { get; set; }
 
+      [JsonPropertyName("day")]
 
-   public string? Title { get; set; } = "String";
+        public decimal? Day { get; set; }
 
+        // [JsonProperty("title")]
+        public string? Title { get; set; }
+         [JsonPropertyName("percentDay")]
+        public decimal? PercentDay { get; set; }
 
-   public decimal? PercentDay { get; set; } = 0;
+        public decimal? PercentMonth { get; set; }
 
-    public decimal? PercentMonth { get; set; } = 0;
-
-    public decimal? PercentYear { get; set; }= 0;
-
-
-
-}
+        public decimal? PercentYear { get; set; }
+    }
 }

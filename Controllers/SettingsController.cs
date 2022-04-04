@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using rpg2.Data;
 using rpg2.Models;
 using Newtonsoft.Json;
+using System.Reflection.Metadata;
 //using rpg2.Models.UserData;
 
 namespace rpg2.Controllers
@@ -18,15 +19,15 @@ namespace rpg2.Controllers
     {
         private static List<Settings> settings = new List<Settings>
             {
-                new Settings
-                {
-                   Summ = 1,
-                   Day = 1,
-                   PercentDay = 1,
-                   PercentMonth = 1,
-                   PercentYear = 1,
-                   Title = "title"
-                }
+                // new Settings
+                // {
+                //    Summ = 1,
+                //    Day = 1,
+                //    PercentDay = 1,
+                //    PercentMonth = 1,
+                //    PercentYear = 1,
+                //    Title = "title"
+                // }
             };
 
         private readonly DataContext1 _contextt;
@@ -43,15 +44,15 @@ namespace rpg2.Controllers
 
             return Ok(await _contextt.Settings.ToListAsync());
         }
-        // [HttpPost]
-        // public async Task<ActionResult<List<Settings>>> Add(Settings set)
-        // {
-        //     _contextt.Settings.Add(set);
-        //     await _contextt.SaveChangesAsync();
-        //     return Ok(await _contextt.Settings.ToListAsync());
+        [HttpPost]
+        public async Task<ActionResult<List<Settings>>> Add(Settings set)
+        {
+            _contextt.Settings.Add(set);
+            await _contextt.SaveChangesAsync();
+            return Ok(await _contextt.Settings.ToListAsync());
 
-        // }
-        [HttpPut(Name = "Editor")]
+        }
+        [HttpPut("/api/[controller]/Editor/{:id}")]
         public async Task<ActionResult<List<Settings>>> UpdateSettings(Settings settings_request)
         {
             var dbsettings = await _contextt.Settings.FindAsync(settings_request.Id);
