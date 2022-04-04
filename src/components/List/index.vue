@@ -46,23 +46,28 @@
             </tr>
           </tfoot> -->
         </table>
-        <h1 class="display-4 fst-italic" v-else>loading data.......</h1>
+        <div class="" v-else>
+          <h1 class="display-4 fst-italic">loading data.......</h1>
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
       </div>
     </div>
     <!-- pagination -->
     <nav aria-label="Page navigation example">
       <ul class="pagination container d-block">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
         <li
-          class="page-item mypage"
-          v-for="pagenumber in totalpage"
-          :key="pagenumber"
-          :class="{ 'active': mypage == pagenumber }"
-          @click="pageclick(pagenumber)"
+          class="page-item"
+          v-for="page in totalpage"
+          :key="page"
+          :class="{ 'active': pagenumber == page }"
+          @click="pageclick(page)"
         >
-          <a class="page-link" href="#"> {{ pagenumber }} </a>
+          <a class="page-link" href="#"> {{ page }} </a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        <!-- <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
       </ul>
     </nav>
     <div class="">
@@ -141,7 +146,9 @@ export default {
 } */
 .mypage {
   padding: auto;
-  /* flex-basis: 25%;
-  text-align: left; */
+  flex-basis: 25%;
+  text-align: left;
+  border-radius: 2px;
+  border: 1px solid;
 }
 </style>
