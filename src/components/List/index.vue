@@ -19,7 +19,7 @@
           <tbody>
             <tr v-for="user in paginationuser" :key="user.index">
               <!-- <td>{{ user.id }}</td> -->
-              <td>{{ user.requestnumber }}</td>
+              <td>{{ user.requestNumber }}</td>
               <td>{{ user.inputtel }}</td>
               <td>{{ user.inputname }}</td>
               <td>{{ user.inputemail }}</td>
@@ -45,6 +45,9 @@
             </tr>
           </tfoot> -->
         </table>
+        <div class="" v-else-if="loadingdataerror">
+          <h1 class="display-4 fst-italic">Error</h1>
+        </div>
         <div class="" v-else>
           <h1 class="display-4 fst-italic">loading data.......</h1>
           <div class="spinner-border" role="status">
@@ -86,6 +89,7 @@ export default {
     limit: 10,
     // totalpage: 0,
     loadingdata: true,
+    loadingdataerror: false,
     pagenumber: 1,
   }),
   computed: {
@@ -121,6 +125,7 @@ export default {
         })
 
         .catch((error) => {
+          this.loadingdataerror = true;
           console.error(error + "err");
         })
         .finally(() => {});

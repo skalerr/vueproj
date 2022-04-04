@@ -22,7 +22,9 @@ builder.Services.AddDbContext<DataContext1>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddSwaggerGen();
-builder.Services.AddHttpClient();
+builder.Services.AddHttpClient("getter", client => {
+    client.BaseAddress = new Uri("http://localhost:5004");
+});
 // builder.Services.AddHttpClient("meta", c =>
 // {
 //     c.BaseAddress = new Uri("http://localhost:5004/api"); // Обращение к стрингу

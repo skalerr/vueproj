@@ -445,7 +445,7 @@ export default {
 
   methods: {
     modalwindow() {
-      this.someModal = new bootstrap.Modal(document.getElementById("takesumm"));
+      // this.someModal = new bootstrap.Modal(document.getElementById("takesumm"));
 
       this.someModal.toggle();
     },

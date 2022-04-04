@@ -57,8 +57,9 @@ namespace rpg2.Controllers
         {
             var dbsettings = await _contextt.Settings.FindAsync(settings_request.Id);
             if (dbsettings == null)
-                return BadRequest("Его не существует");
-
+                return NotFound("Его не существует");
+            try
+            {
             dbsettings.Summ = settings_request.Summ;
             dbsettings.Day = settings_request.Day;
             dbsettings.PercentDay = settings_request.PercentDay;
@@ -67,6 +68,12 @@ namespace rpg2.Controllers
             dbsettings.Title = settings_request.Title;
             await _contextt.SaveChangesAsync();
             return Ok(await _contextt.Settings.ToListAsync());
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
 
@@ -164,12 +171,11 @@ namespace rpg2.Controllers
         {
             try
             {
-                var client = factory.CreateClient();
-                client.BaseAddress = new Uri("http://localhost:5004");
+                var client = factory.CreateClient("getter");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
-                var response = client.PostAsJsonAsync("http://localhost:5004/api/UserData", user).Result;
+                var response = client.PostAsJsonAsync("/api/UserData", user).Result;
                 response.EnsureSuccessStatusCode();
                 //JsonSerializer serializer = new JsonSerializer();
                 //serializer.Deserialize(response);
@@ -241,7 +247,7 @@ namespace rpg2.Controllers
             }
             catch(Exception ex){
                 errorString = ex.Message;
-                return BadRequest(errorString);
+                return StatusCode(500, errorString);
 
             }
 
