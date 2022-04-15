@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import Slider from "@vueform/slider"
-import slider from "vue3-slider"
+import Slider from "@vueform/slider";
+import slider from "vue3-slider";
 export default {
   components: { Slider, "vue3-slider": slider },
   data: () => ({
@@ -45,14 +45,15 @@ export default {
     // format: {
     //   suffix: " RUB",
     // },
-    format: function (value) {
-      return `${Math.round(value)} RUB`
-    },
-
     max: 30000,
     showTooltip: "drag",
   }),
-}
+  methods: {
+    format: function (value) {
+      return `${Math.round(value)} RUB`;
+    },
+  },
+};
 </script>
 
 <style>

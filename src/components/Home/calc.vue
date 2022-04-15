@@ -430,12 +430,7 @@ export default {
     datenow: "",
     someModal: "",
 
-    format: function (value) {
-      return `${Math.round(value / 1000) * 1000} RUB`;
-    },
-    formatday: function (value) {
-      return `${Math.round(value)} Дн`;
-    },
+    
   }),
   // async mounted() {
   //   const res = await fetch("http://localhost:3000/settings")
@@ -444,6 +439,12 @@ export default {
   // },
 
   methods: {
+    format: function (value) {
+      return `${Math.round(value / 1000) * 1000} RUB`;
+    },
+    formatday: function (value) {
+      return `${Math.round(value)} Дн`;
+    },
     modalwindow() {
       // this.someModal = new bootstrap.Modal(document.getElementById("takesumm"));
 

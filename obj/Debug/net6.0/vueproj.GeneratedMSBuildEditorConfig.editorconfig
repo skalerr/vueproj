@@ -8,45 +8,45 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = vueproj
 build_property.RootNamespace = vueproj
-build_property.ProjectDir = C:\Users\Пользователь\source\repos\vueproj\vueproj\
+build_property.ProjectDir = c:\Users\Пользователь\source\repos\vueproj\vueproj\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Пользователь\source\repos\vueproj\vueproj
+build_property.MSBuildProjectDirectory = c:\Users\Пользователь\source\repos\vueproj\vueproj
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Пользователь/source/repos/vueproj/vueproj/Views/Home/App.cshtml]
+[c:/Users/Пользователь/source/repos/vueproj/vueproj/Views/Home/App.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcHAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Пользователь/source/repos/vueproj/vueproj/Views/Home/Index.cshtml]
+[c:/Users/Пользователь/source/repos/vueproj/vueproj/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Пользователь/source/repos/vueproj/vueproj/Views/Home/Privacy.cshtml]
+[c:/Users/Пользователь/source/repos/vueproj/vueproj/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Пользователь/source/repos/vueproj/vueproj/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/Пользователь/source/repos/vueproj/vueproj/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Пользователь/source/repos/vueproj/vueproj/Views/_ViewImports.cshtml]
+[c:/Users/Пользователь/source/repos/vueproj/vueproj/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Пользователь/source/repos/vueproj/vueproj/Views/_ViewStart.cshtml]
+[c:/Users/Пользователь/source/repos/vueproj/vueproj/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Пользователь/source/repos/vueproj/vueproj/Views/___Shared__(notusable)/Error.cshtml]
+[c:/Users/Пользователь/source/repos/vueproj/vueproj/Views/___Shared__(notusable)/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX19fU2hhcmVkX18obm90dXNhYmxlKVxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Пользователь/source/repos/vueproj/vueproj/Views/___Shared__(notusable)/_ValidationScriptsPartial.cshtml]
+[c:/Users/Пользователь/source/repos/vueproj/vueproj/Views/___Shared__(notusable)/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX19fU2hhcmVkX18obm90dXNhYmxlKVxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Пользователь/source/repos/vueproj/vueproj/Views/___Shared__(notusable)/_Layout.cshtml]
+[c:/Users/Пользователь/source/repos/vueproj/vueproj/Views/___Shared__(notusable)/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX19fU2hhcmVkX18obm90dXNhYmxlKVxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-vx122xfmvk
