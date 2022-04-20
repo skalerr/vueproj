@@ -1,5 +1,32 @@
-- name: Uploading files to gh-pages branch
-  uses: JamesIves/github-pages-deploy-action@4.1.4
-  with:
-    branch: gh-pages
-    folder: release/wwwroot
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET 6
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.x
+    - name: Publish .NET Core Project
+      run: dotnet publish vueproj.csproj -c Release --output release --nologo
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    - name: Uploading files to gh-pages branch
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages
+        folder: release/wwwroot
