@@ -24,7 +24,8 @@ const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
 const sourceDir = path.resolve(__dirname, "./");
 const styleDir = path.resolve(sourceDir, "./styles");
 const buildDir = path.resolve("./wwwroot/");
-const indexDir = path.resolve("./Views/Home/Index.cshtml");
+const indexDir = path.resolve("./wwwroot/Index.html");
+
 module.exports = {
   pages: {
     index: {
